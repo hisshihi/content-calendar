@@ -1,0 +1,38 @@
+### Извлечь все данные
+GET http://localhost:8080/api/content
+
+### Поиск по id
+GET http://localhost:8080/api/content/1
+
+### Создать новый пост
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "My second post in a blog",
+  "desc": "Hello, this is my second post!",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-01-08T19:10:02.3336931",
+  "dateUpdated": null,
+  "url": ""
+}
+
+### Обновить существующий пост
+PUT http://localhost:8080/api/content/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "My first post in a blog",
+  "desc": "Hello, this is my first post!",
+  "status": "IN_PROGRESS",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-01-08T19:10:02.3336931",
+  "dateUpdated": "2024-01-08T19:10:02.3336931",
+  "url": "http://localhost:8080/my-firs-post-in-a-blog"
+}
+
+### Удалить существующий пост
+DELETE http://localhost:8080/api/content/1

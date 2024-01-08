@@ -34,8 +34,8 @@ public class ContentCollectionRepository {
 //    Инициализаця для отправки данных по api
     @PostConstruct
     public void init() {
-        Content c = new Content(1,
-                "My firs post in a blog",
+        Content content = new Content(1,
+                "My first post in a blog",
                 "Hello, this is my first post!",
                 Status.IDEA,
                 Type.ARTICLE,
@@ -43,7 +43,19 @@ public class ContentCollectionRepository {
                 null,
                 ""
                 );
-        contentList.add(c);
+        contentList.add(content);
     }
 
+    public void save(Content content) {
+        contentList.removeIf(c -> c.id().equals(content.id()));
+        contentList.add(content);
+    }
+
+    public boolean exsistById(Integer id) {
+        return contentList.stream().filter(c -> c.id().equals(id)).count() == 1;
+    }
+
+    public void delete(Integer id) {
+        contentList.removeIf(c -> c.id().equals(id));
+    }
 }
