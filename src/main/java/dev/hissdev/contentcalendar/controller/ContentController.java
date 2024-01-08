@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/content")
 public class ContentController {
 
-    
+
 
 }
