@@ -2,6 +2,7 @@ package dev.hissdev.contentcalendar.controller;
 
 import dev.hissdev.contentcalendar.model.Content;
 import dev.hissdev.contentcalendar.repository.ContentCollectionRepository;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -13,6 +14,8 @@ import java.util.Optional;
 @RestController
 // путь до контроллера
 @RequestMapping("/api/content")
+// Включает подключение к некоторым портам
+@CrossOrigin
 public class ContentController {
 
     private final ContentCollectionRepository repository;
@@ -42,7 +45,9 @@ public class ContentController {
     @PostMapping("")
     //    Сообщает бразузеру, что эти параметры отправляются в теле запроса
     //    То есть когда отправляется http запрос эти данные отправляются в теле
-    public void create(@RequestBody Content content) {
+
+//    @Valid сообщает, что перед выполнением тела функции параметр должен быть провалидирован
+    public void create(@Valid @RequestBody Content content) {
         repository.save(content);
     }
 
