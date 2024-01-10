@@ -1,6 +1,7 @@
 package dev.hissdev.contentcalendar.controller;
 
 import dev.hissdev.contentcalendar.model.Content;
+import dev.hissdev.contentcalendar.model.Status;
 import dev.hissdev.contentcalendar.repository.ContentCollectionRepository;
 import dev.hissdev.contentcalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
@@ -70,5 +71,18 @@ public class ContentController {
     public void delete(@PathVariable Integer id) {
         repository.deleteById(id);
     }
+
+//    Поиск поста по заголовку
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword) {
+        return repository.findAllByTitleContains(keyword);
+    }
+
+//    Поиск по статусу
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status) {
+        return repository.listByStatus(status);
+    }
+
 
 }
