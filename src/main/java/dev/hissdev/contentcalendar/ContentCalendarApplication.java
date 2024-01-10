@@ -20,6 +20,7 @@ public class ContentCalendarApplication {
 
 	}
 
+//	При создании приложения эти данные добавляются в репозиторий
 	@Bean
 	CommandLineRunner commandLineRunner(ContentRepository contentRepository) {
 		return args -> {

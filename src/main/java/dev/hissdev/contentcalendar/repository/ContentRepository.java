@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface ContentRepository extends ListCrudRepository<Content, Integer> {
 
+//    Пользовательские запросы
     List<Content> findAllByTitleContains(String keyword);
 
     @Query("""
