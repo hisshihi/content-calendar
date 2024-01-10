@@ -24,23 +24,23 @@ public class ContentCalendarApplication {
 	}
 
 //	При создании приложения эти данные добавляются в репозиторий
-	@Bean
-	CommandLineRunner commandLineRunner(ContentRepository contentRepository) {
-		return args -> {
-//				Вставка некоторых данных из бд
-			Content content = new Content(null,
-					"Hello Chat GPT",
-					"This video tell you about chat gpt",
-					Status.IDEA,
-					Type.VIDEO,
-					LocalDateTime.now(),
-					null,
-					""
-			);
-
-			contentRepository.save(content);
-
-		};
-	}
+//	@Bean
+//	CommandLineRunner commandLineRunner(ContentRepository contentRepository) {
+//		return args -> {
+////				Вставка некоторых данных из бд
+//			Content content = new Content(null,
+//					"Hello Chat GPT",
+//					"This video tell you about chat gpt",
+//					Status.IDEA,
+//					Type.VIDEO,
+//					LocalDateTime.now(),
+//					null,
+//					""
+//			);
+//
+//			contentRepository.save(content);
+//
+//		};
+//	}
 
 }
