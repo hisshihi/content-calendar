@@ -1,7 +1,9 @@
 package dev.hissdev.contentcalendar.controller;
 
 import dev.hissdev.contentcalendar.model.Content;
+import dev.hissdev.contentcalendar.model.Status;
 import dev.hissdev.contentcalendar.repository.ContentCollectionRepository;
+import dev.hissdev.contentcalendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +20,9 @@ import java.util.Optional;
 @CrossOrigin
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
 
@@ -56,7 +58,7 @@ public class ContentController {
     @PutMapping("/{id}")
     public void update(@RequestBody Content content, @PathVariable Integer id) {
 
-        if (!repository.exsistById(id)) {
+        if (!repository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Запрашиваемый ресурс не найден.");
         }
         repository.save(content);
@@ -67,7 +69,20 @@ public class ContentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repository.delete(id);
+        repository.deleteById(id);
     }
+
+//    Поиск поста по заголовку
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword) {
+        return repository.findAllByTitleContains(keyword);
+    }
+
+//    Поиск по статусу
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status) {
+        return repository.listByStatus(status);
+    }
+
 
 }
