@@ -1,0 +1,52 @@
+[
+  {
+    "id": null,
+    "title": "My second post in a blog",
+    "desc": "Hello, this is my second post!",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-01-08T19:10:02.3336931",
+    "dateUpdated": null,
+    "url": ""
+  },
+  {
+    "id": null,
+    "title": "My post in a blog",
+    "desc": "Hello, this is my post!",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-01-08T19:10:02.3336931",
+    "dateUpdated": null,
+    "url": ""
+  },
+  {
+    "id": null,
+    "title": "Video about my cat Businka",
+    "desc": "My cat is os cute",
+    "status": "IDEA",
+    "contentType": "VIDEO",
+    "dateCreated": "2024-01-08T19:10:02.3336931",
+    "dateUpdated": null,
+    "url": "https://youtube.com"
+  },
+  {
+    "id": null,
+    "title": "My life",
+    "desc": "I tell you about my life",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-01-08T19:10:02.3336931",
+    "dateUpdated": null,
+    "url": ""
+  },
+  {
+    "id": null,
+    "title": "I really love my princess, Arina",
+    "desc": "I don't enjoy life without you ❤.",
+    "status": "COMPLETED",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-01-08T19:10:02.3336931",
+    "dateUpdated": null,
+    "url": ""
+  }
+]
